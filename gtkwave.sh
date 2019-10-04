@@ -69,6 +69,11 @@ if [[ -n "$SHMID" ]]
 then
     echo "Created shared memory trace with id $SHMID"
     echo "Starting $gtkwave -I $SHMID $@"
+    echo "Warning: if gtkwave fails because of unknown option '-p', you might"
+    echo "         to check that you have the modified gtkwave with remote tcl"
+    echo "         control over a tcp socket wich adds this option. You can also"
+    echo "         edit the gtkwave launch configuration to remove the '-p 6789'"
+    echo "         argument"
     $gtkwave -I $SHMID "$@" &
     gtkwave_pid=$!
     wait
