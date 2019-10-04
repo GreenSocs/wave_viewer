@@ -28,6 +28,8 @@ workspace.
 
 ## Setup
 
+### 1. Import `wave_viewer` project.
+
 Open an eclipse workspace. You need to add this project into it.
 First copy the project files into your disk.
 Then in Eclipse, in the menu **File** -> **Import...** window.
@@ -35,9 +37,13 @@ Select **General** -> **Existing project into workspace** and hit **Next**
 button. You have to select the directory where this project is. Ensure 
 `wave_viewer` project is selected in the list then hit **Finish** button.
 
+### 2. Import `linux-aarch64` project
+
 This project is configured to go along with a project named `linux-aarch64`
 which should contain a compiled linux kernel source tree with the generated 
 vmlinux elf file.
+
+### 3. Initialize the trace file
 
 You also need to create a named pipe file that will be used for exchanging
 data between the simulation and the viewer.
@@ -58,6 +64,18 @@ We use the last one to launch everything at the same time.
 In the launch configuration dropdown list, select **gdb and wave**.
 Then in the dropdown menu at the left, select **debug** mode. This last step is
 important.
+
+You launch the configuration using the **Launch in 'Debug' mode** button (middle
+button at the left of the drop-down with a small bug icon).
+Then it starts the debugger session and the viewer.
+
+The viewer is displayed in an eclipse view that is named XEmbedView. At first
+it is added in a tab with all the other views along with the debugger console.
+You can then move it to some other place in your persepective.
+If the tab does not appear the first time you launch it, you need to add it
+manually using the following steps:
+1. Go in the **Window** menu -> **Show View** -> **Other...**
+2. In **General** folder, select **XEmbedView**, then hit **Open** button.
 
 ## Using this project without the embedded viewer
 
