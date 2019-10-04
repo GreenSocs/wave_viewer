@@ -9,19 +9,22 @@ workspace.
 * An Eclipse CDT (C/C++ development). If is not packaged in your distrbution,
   you can download it from the eclipse
   [website](https://www.eclipse.org/downloads/packages/). Choose **Eclipse IDE
-  for C/C++ Developers**.
+  for C/C++ Developers**. It works with 2019.6 or 2019.9 version.
 
-* The XEmbedPlugin into your eclipse installation. It is available in this
+* The **XEmbedPlugin** into your eclipse installation. It is available in this
   [repository](https://github.com/GreenSocs/XEmbedEclipsePlugin). You can
   follow the step in the README to install it. This plug-in is optional, see
   _Using this project without the embedded viewer_ below to use the project
   without it.
 
-* Gtkwave program with tcl support and an additional tcl socket support. It is
+* **Gtkwave** program with tcl support and an additional tcl socket support. It is
   available in this [repository](https://github.com/GreenSocs/gtkwave). Follow
   the step in the README to build and install it. This gtkwave install directory
   must be in your PATH. It also possible to use this project without special
   gtkwave, see _Using this project without custom gtkwave_ below for more information.
+
+* **gdb-multiarch** debugger. It can work with any packaged gdb with aarch64
+  architecture support: see _Using this project with another gdb_.
 
 ## Setup
 
@@ -65,6 +68,15 @@ You wont'be able to control gtkwave from gdb console.
 
 If your gtkwave does not support tcl. You need also to remove the `-S init.tcl`
 arguments.
+
+## Using this project with another gdb
+
+This project is configured to use _gdb-multiarch_. You need to modify the
+_linux-aarcg64 debug_ launch configuration to change the debugger program if
+you want to use another one.
+
+When you edit the configuration, select the **debugger** tab and update the
+**GDB debugger** entry.
 
 ## GDB commands
 
