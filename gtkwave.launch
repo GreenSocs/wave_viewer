@@ -5,6 +5,6 @@
     </listAttribute>
     <stringAttribute key="org.eclipse.ui.externaltools.ATTR_LAUNCH_CONFIGURATION_BUILD_SCOPE" value="${none}"/>
     <stringAttribute key="org.eclipse.ui.externaltools.ATTR_LOCATION" value="${workspace_loc:wave_viewer/gtkwave.sh}"/>
-    <stringAttribute key="org.eclipse.ui.externaltools.ATTR_TOOL_ARGUMENTS" value="/tmp/outdir/trace.vcd&#10;-S ${workspace_loc:wave_viewer/init.tcl}&#10;-X ${xembed_window_id}&#10;-p 6789"/>
+    <stringAttribute key="org.eclipse.ui.externaltools.ATTR_TOOL_ARGUMENTS" value="trace.vcd&#10;-S init.tcl&#10;-X ${xembed_window_id}&#10;-p 6789"/>
     <stringAttribute key="org.eclipse.ui.externaltools.ATTR_WORKING_DIRECTORY" value="${workspace_loc:wave_viewer}"/>
 </launchConfiguration>

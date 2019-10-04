@@ -39,6 +39,14 @@ This project is configured to go along with a project named `linux-aarch64`
 which should contain a compiled linux kernel source tree with the generated 
 vmlinux elf file.
 
+You also need to create a named pipe file that will be used for exchanging
+data between the simulation and the viewer.
+
+In the directory containing the `wave_viewer` project (where you cloned or copied it), do:
+```
+mkfifo trace.vcd
+```
+
 ## Launch configurations
 
 The project adds 3 launch configurations:

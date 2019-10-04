@@ -27,7 +27,9 @@ then
 fi
 if [ ! -p "$trace" ]
 then
-    echo "Warning: '$trace' is not a pipe, live view will not work properly"
+    echo "Error: '$trace' is not a pipe, live view will not work properly." >&2
+    echo "Please create it using mkfifo" >&2
+    exit 1
 fi
 
 # kill coporoc on sigterm
