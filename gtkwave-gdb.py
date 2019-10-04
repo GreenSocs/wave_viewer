@@ -65,10 +65,12 @@ class GtkWaveSocketParam(gdb.Parameter):
 
     def __init__(self):
         self.show_doc = "GtkWave control socket."
-        self.set_doc = "GtkWave control socket (eg 'localhost:1234')"
+        self.set_doc = "GtkWave control socket (eg 'localhost:6789')"
         super(GtkWaveSocketParam, self).__init__("gtkwave-socket",
                 gdb.COMMAND_DATA, gdb.PARAM_STRING)
         self.value = os.getenv("GTKWAVE_CONTROL_SOCKET")
+        if not self.value:
+            self.value = 'localhost:6789'
         self.saved_value = self.value
 
     def validate(self):
